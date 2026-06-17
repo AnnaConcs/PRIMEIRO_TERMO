@@ -135,11 +135,139 @@
 # janela_Termostato.mainloop()
 # 6. Classificador de Lotes: O usuário insere o código do produto. Se começar com "A",
 # exiba "Alimentos". Se "E", "Eletrônicos". Para qualquer outro, "Desconhecido".
+# import tkinter as tk
+# from tkinter import messagebox, ttk
+# def Classificador():
+#     Classificador_Lotes = Lotes_Classificador.get()
+#     if Classificador_Lotes  == "A":
+#         messagebox.showwarning("Aviso", "Você escolheu Alimentos")
+#     elif Classificador_Lotes == "E":
+#          messagebox.showwarning("Aviso", "Você escolheu Eletrônicos")
+#     else:
+#         messagebox.showinfo("Aviso", "Lote Desconhecido")
+# #janela
+# janela_Lotes = tk.Tk()
+# janela_Lotes.title("Classificador de Lotes")
+# janela_Lotes.geometry("500x500")
+# #componentes/Labels
+# lbl_mensagem_Lotes = tk.Label(janela_Lotes, text="Digite a letra A, para Alimentos. E, Eletrônicos. Qualquer outra, Desconhecido")
+# lbl_mensagem_Lotes.grid(row=0, column=0, pady=10, padx=10)
+# #Entrys
+# Lotes_Classificador = tk.Entry(janela_Lotes, font=("Arial", 12), width=20)
+# Lotes_Classificador.grid(row=1,column=0,pady=10,padx=10)
+# # Botão
+# btn_enviar_mensagem = tk.Button(janela_Lotes, text="Classificar Lote", command=Classificador,bg="#c00c0c", fg="White")
+# btn_enviar_mensagem.grid(row=4, column=0, pady=10, padx=10)
+# btn_fechar_janela = tk.Button(janela_Lotes, text="Fechar janela", command=janela_Lotes.destroy, bg="#c00c0c", fg="White")
+# btn_fechar_janela.grid(row=7, column=0, pady=10, padx=10)
+# # Rodar interface
+# janela_Lotes.mainloop()
+#7.Segurança de Operação: A máquina só liga se o sensor_porta == "fechada" E o
+#botao_emergencia == "desligado". Peça esses dois inputs e diga se a máquina pode
+#iniciar.
+# import tkinter as tk
+# from tkinter import messagebox, ttk
+# def Seguranca():
+#     sensor_porta = combo_nivel_sensor.get()
+#     botao_emergencia = combo_nivel_emergencia.get()
+#     if sensor_porta  == "Fechado" and botao_emergencia == "Desligado":
+#         messagebox.showwarning("Aviso", "Porta Fechada e Botão desligado. Pode iniciar")
+#     else:
+#          messagebox.showinfo("Aviso", "Porta aberta, Botão ligado. não pode iniciar")
+# #janela
+# janela_Seguranca = tk.Tk()
+# janela_Seguranca.title("Segurança de Operação")
+# janela_Seguranca.geometry("500x500")
+# #componentes/Labels
+# lbl_mensagem_Lotes = tk.Label(janela_Seguranca, text="Selecione as informações corretas para saber se pode iniciar ou não")
+# lbl_mensagem_Lotes.grid(row=0, column=0, pady=10, padx=10)
+# #Entrys
+# # botao_emergencia = tk.Entry(janela_Seguranca, font=("Arial", 12), width=20)
+# # botao_emergencia.grid(row=1,column=0,pady=10,padx=10)
+# #Componentes de ComboBox
+# combo_nivel_sensor = tk.ttk.Combobox(janela_Seguranca, values=["Ligado", "Fechado", "Desligado", "Aberto"], width=30)
+# combo_nivel_sensor.grid(row=2, column=0, pady=10, padx=10)
+# combo_nivel_emergencia = tk.ttk.Combobox(janela_Seguranca, values=["Ligado", "Fechado", "Desligado", "Aberto"], width=30)
+# combo_nivel_emergencia.grid(row=3, column=0, pady=10, padx=10)
+# #Botão
+# btn_enviar_mensagem = tk.Button(janela_Seguranca, text="Confirmar", command=Seguranca,bg="#c00c0c", fg="White")
+# btn_enviar_mensagem.grid(row=4, column=0, pady=10, padx=10)
+# btn_fechar_janela = tk.Button(janela_Seguranca, text="Fechar janela", command=janela_Seguranca.destroy, bg="#c00c0c", fg="White")
+# btn_fechar_janela.grid(row=7, column=0, pady=10, padx=10)
+# #Rodar interface
+# janela_Seguranca.mainloop()
+# 8. Cálculo de Descarte: Peça o total de peças produzidas e o total de defeituosas. Se
+# o descarte for maior que 5% do total, exiba "Revisar Processo", caso contrário,
+# "Processo Otimizado".
+# import tkinter as tk
+# from tkinter import messagebox
+# def Calculo():
+#     pecas_produzidas = int(ent_pecas_defeituosas.get())
+#     total_defeituosas = int(ent_total_defeituosas.get())
+    
+#     if pecas_produzidas  > total_defeituosas:
+         
+#          messagebox.showwarning("Aviso", "O Processo de descarte foi Otimizado")
+#     elif total_defeituosas > 5:
+#           total_porc = total_defeituosas - pecas_produzidas * 0.05
+#           messagebox.showinfo("Aviso", f"Revisar Processo {total_porc}")
+# #janela
+# janela_calculo = tk.Tk()
+# janela_calculo.title("Processo Otimizado")
+# janela_calculo.geometry("500x500")
+# #componentes/Labels
+# lbl_mensagem_Lotes = tk.Label(janela_calculo, text="Qual o total de peças produzidas?")
+# lbl_mensagem_Lotes.grid(row=0, column=0, pady=10, padx=10)
+# lbl_total_descarte = tk.Label(janela_calculo, text="Qual o total de peças produzidas?")
+# lbl_total_descarte.grid(row=1, column=0, pady=10, padx=10)
+
+# #Entrys
+# ent_pecas_defeituosas = tk.Entry(janela_calculo, font=("Arial", 12), width=20)
+# ent_pecas_defeituosas.grid(row=0,column=1,pady=10,padx=10)
+# ent_total_defeituosas = tk.Entry(janela_calculo, font=("Arial", 12), width=20)
+# ent_total_defeituosas.grid(row=1,column=1,pady=10,padx=10)
+
+
+# #Botão
+# btn_enviar_mensagem = tk.Button(janela_calculo, text="Fazer Cálculo", command=Calculo,bg="#c00c0c", fg="White")
+# btn_enviar_mensagem.grid(row=4, column=0, pady=10, padx=10)
+# btn_fechar_janela = tk.Button(janela_calculo, text="Fechar janela", command=janela_calculo.destroy, bg="#c00c0c", fg="White")
+# btn_fechar_janela.grid(row=7, column=0, pady=10, padx=10)
+# #Rodar interface
+# janela_calculo.mainloop()
+# 9. Validação de Medida: Uma peça deve ter entre 9.8mm e 10.2mm. Peça a medida e
+# diga se está dentro da tolerância, acima ou abaixo.
+# import tkinter as tk
+# from tkinter import messagebox
+# def Validacao():
+#     pecas_medida = float(medida_pecas.get())
+#     if pecas_medida  > 9.8 and pecas_medida < 10.2:
+#         messagebox.showwarning("Aviso", "Abaixo da Tolerância")
+#     elif pecas_medida > 10.2:
+#         messagebox.showwarning("Aviso", "Acima da Tolerância")
+#     else:
+#         messagebox.showwarning("Aviso", "Dentro da Tolerância")
+# #janela
+# janela_Validacao = tk.Tk()
+# janela_Validacao.title("Validação de Medida")
+# janela_Validacao.geometry("500x500")
+# #componentes/Labels
+# lbl_mensagem_Lotes = tk.Label(janela_Validacao, text="Qual a medida da peça?")
+# lbl_mensagem_Lotes.grid(row=0, column=0, pady=10, padx=10)
+# #Entrys
+# medida_pecas = tk.Entry(janela_Validacao, font=("Arial", 12), width=20)
+# medida_pecas.grid(row=0,column=1,pady=10,padx=10)
+# #Botão
+# btn_enviar_mensagem = tk.Button(janela_Validacao, text="Conferir Medida", command=Validacao,bg="#c00c0c", fg="White")
+# btn_enviar_mensagem.grid(row=4, column=0, pady=10, padx=10)
+# btn_fechar_janela = tk.Button(janela_Validacao, text="Fechar janela", command=janela_Validacao.destroy, bg="#c00c0c", fg="White")
+# btn_fechar_janela.grid(row=7, column=0, pady=10, padx=10)
+# #Rodar interface
+# janela_Validacao.mainloop()
+# 4. Média de Qualidade: Peça 3 notas de inspeção de uma peça (0 a 10). Exiba a média
+# aritmética simples delas.
 import tkinter as tk
 from tkinter import messagebox
-def Classificador():
-    Classificador_Lotes = Lotes_Classificador.get
-    if Classificador_Lotes  == "" :
-        messagebox.showwarning("Aviso", "Preencha o campo em branco!")
-    else:
-        messagebox.showinfo("Bem-Vindo",f"")
+def Qualidade():
+    media_qualidade = int(qualidade_media.get())
+    if media_qualidade == 
